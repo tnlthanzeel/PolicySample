@@ -1,0 +1,441 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Facets.Persistence.Migrations
+{
+    /// <inheritdoc />
+    public partial class Visitorregistrationtablemadetemporal : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropIndex(
+                name: "IX_VisitorRegistrationCounter_Name",
+                table: "VisitorRegistrationCounter");
+
+            migrationBuilder.AlterTable(
+                name: "VisitorRegistrationCounter")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "UpdatedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: true,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset",
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "UpdatedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<bool>(
+                name: "IsLocked",
+                table: "VisitorRegistrationCounter",
+                type: "bit",
+                nullable: false,
+                oldClrType: typeof(bool),
+                oldType: "bit")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<bool>(
+                name: "IsDeleted",
+                table: "VisitorRegistrationCounter",
+                type: "bit",
+                nullable: false,
+                oldClrType: typeof(bool),
+                oldType: "bit")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<Guid>(
+                name: "EventId",
+                table: "VisitorRegistrationCounter",
+                type: "uniqueidentifier",
+                nullable: false,
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Description",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(1500)",
+                maxLength: 1500,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(1500)",
+                oldMaxLength: 1500,
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "DeletedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: true,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset",
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "DeletedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "CreatedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: false,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "CreatedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<Guid>(
+                name: "Id",
+                table: "VisitorRegistrationCounter",
+                type: "uniqueidentifier",
+                nullable: false,
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AddColumn<DateTime>(
+                name: "PeriodEnd",
+                table: "VisitorRegistrationCounter",
+                type: "datetime2",
+                nullable: false,
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AddColumn<DateTime>(
+                name: "PeriodStart",
+                table: "VisitorRegistrationCounter",
+                type: "datetime2",
+                nullable: false,
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VisitorRegistrationCounter_Name_EventId",
+                table: "VisitorRegistrationCounter",
+                columns: new[] { "Name", "EventId" },
+                unique: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropIndex(
+                name: "IX_VisitorRegistrationCounter_Name_EventId",
+                table: "VisitorRegistrationCounter");
+
+            migrationBuilder.DropColumn(
+                name: "PeriodEnd",
+                table: "VisitorRegistrationCounter")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.DropColumn(
+                name: "PeriodStart",
+                table: "VisitorRegistrationCounter")
+                .Annotation("SqlServer:IsTemporal", true)
+                .Annotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .Annotation("SqlServer:TemporalHistoryTableSchema", null)
+                .Annotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .Annotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterTable(
+                name: "VisitorRegistrationCounter")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "UpdatedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: true,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset",
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "UpdatedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<bool>(
+                name: "IsLocked",
+                table: "VisitorRegistrationCounter",
+                type: "bit",
+                nullable: false,
+                oldClrType: typeof(bool),
+                oldType: "bit")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<bool>(
+                name: "IsDeleted",
+                table: "VisitorRegistrationCounter",
+                type: "bit",
+                nullable: false,
+                oldClrType: typeof(bool),
+                oldType: "bit")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<Guid>(
+                name: "EventId",
+                table: "VisitorRegistrationCounter",
+                type: "uniqueidentifier",
+                nullable: false,
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Description",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(1500)",
+                maxLength: 1500,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(1500)",
+                oldMaxLength: 1500,
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "DeletedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: true,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset",
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "DeletedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<DateTimeOffset>(
+                name: "CreatedOn",
+                table: "VisitorRegistrationCounter",
+                type: "datetimeoffset",
+                nullable: false,
+                oldClrType: typeof(DateTimeOffset),
+                oldType: "datetimeoffset")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "CreatedBy",
+                table: "VisitorRegistrationCounter",
+                type: "nvarchar(250)",
+                maxLength: 250,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(250)",
+                oldMaxLength: 250,
+                oldNullable: true)
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.AlterColumn<Guid>(
+                name: "Id",
+                table: "VisitorRegistrationCounter",
+                type: "uniqueidentifier",
+                nullable: false,
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier")
+                .OldAnnotation("SqlServer:IsTemporal", true)
+                .OldAnnotation("SqlServer:TemporalHistoryTableName", "VisitorRegistrationCounterHistory")
+                .OldAnnotation("SqlServer:TemporalHistoryTableSchema", null)
+                .OldAnnotation("SqlServer:TemporalPeriodEndColumnName", "PeriodEnd")
+                .OldAnnotation("SqlServer:TemporalPeriodStartColumnName", "PeriodStart");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VisitorRegistrationCounter_Name",
+                table: "VisitorRegistrationCounter",
+                column: "Name",
+                unique: true);
+        }
+    }
+}
