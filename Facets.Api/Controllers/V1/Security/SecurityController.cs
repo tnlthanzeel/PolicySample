@@ -37,9 +37,9 @@ public sealed class SecurityController : ControllerBase
         (
         issuer: _jwtConfig.Issuer,
         audience: _jwtConfig.Audience,
-            expires: DateTime.UtcNow.Add(_jwtConfig.TokenLifetime),
-            signingCredentials: new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-            claims: new Claim[] { new Claim("permission", "event.view") }
+        expires: DateTime.Now.AddDays(30),
+        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+        claims: new Claim[] { new Claim("permission", "event.view") }
         );
 
         var jwtToken = new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);

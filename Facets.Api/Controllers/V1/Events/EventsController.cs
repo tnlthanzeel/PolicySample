@@ -13,11 +13,10 @@ namespace Facets.Api.Controllers.V1.Events;
 [Authorize(policy: ApplicationAuthPolicy.HasAccessToEvent)]
 public sealed class EventsController : ControllerBase
 {
-    private readonly IEventService _eventService;
+    
 
-    public EventsController(IEventService eventService)
+    public EventsController()
     {
-        _eventService = eventService;
     }
 
 
